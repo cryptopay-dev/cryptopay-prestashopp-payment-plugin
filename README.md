@@ -9,3 +9,9 @@ The extension allows you to integrate the Cryptopay payment gateway to Prestasho
 * A Cryptopay merchant account -> Sign up [here](https://business.cryptopay.me/).
 * Widget Key -> Find them [here](https://business.cryptopay.me/app/settings/widget).
 * Download the extension from the Prestashop Marketplace [here](https://addons.prestashop.com/).
+
+Support and Feedback
+--------------------
+Prestashop 1.7+
+
+Your feedback is appreciated! If you have specific problems or bugs with this Magento module, please file an issue on Github. For general feedback and support requests, send an email to support@cryptopay.me
