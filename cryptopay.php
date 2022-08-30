@@ -144,7 +144,7 @@ class Cryptopay extends PaymentModule
     public function getExternalPaymentOption()
     {
         $externalOption = new PrestaShop\PrestaShop\Core\Payment\PaymentOption();
-        $externalOption->setCallToActionText($this->l('Cryptopay'))
+        $externalOption->setCallToActionText(Configuration::get('CRYPTOPAY_MODULE_OS_BUTTON_TITLE'))
             ->setAction(
                 $this->context->link->getModuleLink(
                     $this->name,
@@ -325,7 +325,7 @@ class Cryptopay extends PaymentModule
                 'type' => 'select',
                 'prefix' => '<i class="icon icon-tag"></i>',
                 'name' => 'CRYPTOPAY_MODULE_OS_THEME',
-                'label' => $this->l('Environment'),
+                'label' => $this->l('Theme'),
                 'options' => array(
                     'query' => array(
                         array(
@@ -334,7 +334,7 @@ class Cryptopay extends PaymentModule
                         ),
                         array(
                             'id_cryptopay_module_theme' => 'light',
-                            'name' => $this->l('Lignt')
+                            'name' => $this->l('Light')
                         )
                     ),
                     'id' => 'id_cryptopay_module_theme',
