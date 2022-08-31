@@ -41,6 +41,7 @@ class CryptopayCancelModuleFrontController extends ModuleFrontController
         $history           = new OrderHistory();
         $history->id_order = $order_id;
         $history->changeIdOrderState((int)Configuration::get('PS_OS_CANCELED'), $order_id);
+        $history->save();
 
         Tools::redirect(
             $link->getPageLink('order-detail', true, null, 'id_order=' . $order_id)
