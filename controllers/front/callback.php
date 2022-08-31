@@ -58,16 +58,19 @@ class CryptopayCallbackModuleFrontController extends ModuleFrontController
 
             if ($data['status'] == 'new') {
                 $history->changeIdOrderState((int)Configuration::get('CRYPTOPAY_MODULE_OS_PENDING'), $order_id);
+                $history->save();
                 exit('*new*');
             }
 
             if ($data['status'] == 'completed' || $data['status'] == 'unresolved' && $data['status_context'] == 'overpaid') {
                 $history->changeIdOrderState((int)Configuration::get('CRYPTOPAY_MODULE_OS_COMPLETE'), $order_id);
+                $history->save();
                 exit('*completed*');
             }
 
             if ($data['status'] == 'cancelled' || $data['status'] == 'refunded' || $data['status'] == 'unresolved') {
                 $history->changeIdOrderState((int)Configuration::get('CRYPTOPAY_MODULE_OS_REFUSE'), $order_id);
+                $history->save();
                 exit('*cancelled*');
             }
         } catch (Exception $e) {
