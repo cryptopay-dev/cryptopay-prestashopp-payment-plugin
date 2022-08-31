@@ -21,7 +21,7 @@ class Cryptopay extends PaymentModule
         $this->version = '1.0.0';
         $this->ps_versions_compliancy = array('min' => '1.7', 'max' => _PS_VERSION_);
         $this->author = 'Cryptopay';
-        $this->controllers = array('redirect', 'callback');
+        $this->controllers = array('redirect', 'callback', 'cancel');
 
         $this->currencies = true;
         $this->currencies_mode = 'checkbox';

@@ -48,9 +48,10 @@ class CryptopayCallbackModuleFrontController extends ModuleFrontController
             }
 
             $data = $body['data'];
-            $order_id = str_replace(
+            $cart_id = str_replace(
                 'prestashop_order_', "", 'prestashop_order_' . $data['custom_id']
             );
+            $order_id = (int) Order::getIdByCartId((int)$cart_id);
 
             $history           = new OrderHistory();
             $history->id_order = $order_id;
